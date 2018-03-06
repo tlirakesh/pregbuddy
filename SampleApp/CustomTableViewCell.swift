@@ -26,7 +26,6 @@ class CustomTableViewCell: UITableViewCell
     }
     
     @IBAction func favButtonTapped(_ sender: Any) {
-        tweet.bookMarked = true
         self.delegate?.favTapped(self, tweet)
     }
     

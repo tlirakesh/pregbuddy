@@ -243,14 +243,16 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource
             }
         }
     }
-    
 }
 
 extension ViewController : CustomTableViewCellDelegate
 {
     func favTapped(_ cell: CustomTableViewCell, _ tweet: TweetDTO) {
-        cell.tweet.bookMarked = true
-        bookmarksList.append(tweet) //add selected tweet to bookmark list
+        if cell.tweet.bookMarked == false
+        {
+            cell.tweet.bookMarked = true
+            bookmarksList.append(tweet) //add selected tweet to bookmark list
+        }
         
         if self.tabBarController?.viewControllers != nil
         {
